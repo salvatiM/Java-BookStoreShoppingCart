@@ -40,7 +40,7 @@
                       <td>${ cartItem.getQuantity() }</td>
                       <td> <fmt:formatNumber value = "${ cartItem.getTotalCost() }" type = "currency"/> </td>
                       <td><input type="submit" value="Update" />
-                          <input type="submit" formaction="/cart/Delete" value="Delete" /></td>
+                          <input type="submit" formaction="/cart/delete" value="Delete" /></td>
                     </form>
                   </tr>
               </c:forEach>
