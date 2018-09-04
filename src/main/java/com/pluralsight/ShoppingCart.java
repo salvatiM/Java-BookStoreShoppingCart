@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 import javax.inject.Inject;
+import javax.persistence.Index;
 
 public class ShoppingCart {
  @Inject
@@ -23,12 +24,22 @@ public class ShoppingCart {
  }
 
  public void deleteCartItem(int index) {
-   try {
-    cartItems.remove(index);
-   }
-   catch (Exception e){
-    e.printStackTrace();
-   }
+  try {
+   cartItems.remove(index);
+  }
+  catch (Exception e){
+   e.printStackTrace();
+  }
+ }
+
+ public void updateCartItem(int index, int quantity) {
+  try {
+   CartItem cartItem = cartItems.get(index);
+   cartItem.setQuantity(quantity);
+  }
+  catch (IndexOutOfBoundsException e){
+   e.printStackTrace();
+  }
  }
 
  public CartItem getCartItem(int iItemIndex) {
